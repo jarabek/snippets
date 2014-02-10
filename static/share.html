@@ -1,0 +1,21 @@
+<html>	
+	<head>
+		<script src="jquery.js"></script>
+		<script type='text/javascript'>
+			var shareClick = function(){
+				var text = $('#url').val();
+				$.ajax({
+				  type: "POST",
+				  url: "/share",
+				  data: { url: text }
+				})
+				  .done(function( msg ) {
+					alert( "Saved URL: " + msg );
+           	  });			
+			}
+		</script>
+	</head>
+	<body>
+		<input id='url' type='text'></input><button onclick="shareClick();">Write</button>
+	</body>	
+</html>
