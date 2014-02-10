@@ -11,7 +11,7 @@ app.configure(function() {
 
 app.post('/share', function(req,res){
 	console.log('Writing to shared file');
-	fs.writeFile("./savedUrl.html", req.body.url, function(err) {
+	fs.writeFile("./static/savedUrl.html", req.body.url, function(err) {
 		if(err) {
 			console.log(err);
 		} else {
